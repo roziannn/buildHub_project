@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="{{ asset('layout/asset/css/slick.css') }}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ asset('layout/asset/css/style.css') }}">
+
+    <script src="{{ asset('layout/asset/js/jquery-1.12.1.min.js') }}"></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -37,7 +41,7 @@
     @include('user.layouts.footer')
 
     <!-- jquery plugins here-->
-    <script src="{{ asset('layout/asset/js/jquery-1.12.1.min.js') }}"></script>
+
     <!-- popper js -->
     <script src="{{ asset('layout/asset/js/popper.min.js') }}"></script>
     <!-- bootstrap js -->

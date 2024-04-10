@@ -6,16 +6,14 @@
                   <div class="single_footer_part">
                       <h4>BUILDHUB</h4>
                       <ul class="list-unstyled">
-                          <li><a href="">Managed Website</a></li>
-                          <li><a href="">Manage Reputation</a></li>
-                          <li><a href="">Power Tools</a></li>
-                          <li><a href="">Marketing Service</a></li>
+                          <li><a href="">About Us</a></li>
+                          <li><a href="">Career</a></li>
                       </ul>
                   </div>
               </div>
               <div class="col-sm-6 col-lg-2">
                   <div class="single_footer_part">
-                      <h4>Quick Links</h4>
+                      <h4>Bisnis</h4>
                       <ul class="list-unstyled">
                           <li><a href="">Jobs</a></li>
                           <li><a href="">Brand Assets</a></li>
@@ -26,23 +24,11 @@
               </div>
               <div class="col-sm-6 col-lg-2">
                   <div class="single_footer_part">
-                      <h4>Features</h4>
-                      <ul class="list-unstyled">
-                          <li><a href="">Jobs</a></li>
-                          <li><a href="">Brand Assets</a></li>
-                          <li><a href="">Investor Relations</a></li>
-                          <li><a href="">Terms of Service</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="col-sm-6 col-lg-2">
-                  <div class="single_footer_part">
-                      <h4>Resources</h4>
+                      <h4>Layanan Konsumen</h4>
                       <ul class="list-unstyled">
                           <li><a href="">Guides</a></li>
-                          <li><a href="">Research</a></li>
-                          <li><a href="">Experts</a></li>
-                          <li><a href="">Agencies</a></li>
+                          <li><a href="">Pusat Bantuan</a></li>
+                          <li><a href="">FAQ</a></li>
                       </ul>
                   </div>
               </div>
@@ -66,7 +52,6 @@
                   </div>
               </div>
           </div>
-
       </div>
       <div class="copyright_part">
           <div class="container">

@@ -4,7 +4,7 @@
            <div class="row align-items-center">
                <div class="col-lg-12">
                    <nav class="navbar navbar-expand-lg navbar-light">
-                       <a class="navbar-brand" href="index.html"> BUILD<span id="hubTxt">HUB</span></a>
+                       <a class="navbar-brand" href="index.html" id="buildTxt"> BUILD<span id="hubTxt">HUB</span></a>
                        <button class="navbar-toggler" type="button" data-toggle="collapse"
                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                            aria-expanded="false" aria-label="Toggle navigation">
@@ -61,22 +61,10 @@
                                </li>
                            </ul>
                        </div>
-                       <div class="hearer_icon d-flex">
-                           <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-                           <a href=""><i class="ti-heart"></i></a>
-                           <div class="dropdown cart">
-                               <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                   <i class="fas fa-cart-plus"></i>
-                               </a>
-                               <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <div class="single_product">
 
-                                </div>
-                            </div> -->
+                       <a href="#" type="button" data-toggle="modal" data-target="#loginModal"
+                           class="genric-btn danger-border circle arrow" id="loginBtn">Login/Register</a>
 
-                           </div>
-                       </div>
                    </nav>
                </div>
            </div>
@@ -92,4 +80,78 @@
        </div>
    </header>
 
+   <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered">
+           <div class="modal-content border-0 p-3">
+               <div class="modal-header border-0">
+                   <h2 class="modal-title" id="loginModalLabel">Login</h2>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">×</span>
+                   </button>
+               </div>
+               <div class="modal-body">
+                   <!-- Session Status -->
+                   <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                   <button class="genric-btn danger-border w-100 my-3" type="submit"><i
+                           class="fab fa-google me-2"></i>
+                       Sign in
+                       with google</button>
+
+
+                   <div class="border-top my-3"></div>
+
+                   <form id="loginForm" method="POST" action="{{ route('login') }}">
+                       @csrf
+
+                       <!-- Email Address -->
+                       <div class="mb-3">
+                           <label for="email" class="form-label">{{ __('Email') }}</label>
+                           <input id="email" class="form-control" type="email" name="email"
+                               value="{{ old('email') }}" required autofocus autocomplete="username">
+                           <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                       </div>
+
+                       <!-- Password -->
+                       <div class="mb-3">
+                           <label for="password" class="form-label">{{ __('Password') }}</label>
+                           <input id="password" class="form-control" type="password" name="password" required
+                               autocomplete="current-password">
+                           <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                       </div>
+
+                       <div class="d-flex justify-content-between">
+                           <div class="form-check mb-3">
+                               <input id="remember_me" class="form-check-input" type="checkbox" name="remember">
+                               <label class="form-check-label" for="remember_me">{{ __('Remember me') }}</label>
+                           </div>
+
+
+                           <div class="text-end">
+                               @if (Route::has('password.request'))
+                                   <a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
+                               @endif
+                           </div>
+                       </div>
+
+                       <div class="text-center mt-3">
+                           {{-- <x-primary-button>{{ __('Log in') }}</x-primary-button> --}}
+                           <button class="btn_login w-100">Masuk</button>
+                       </div>
+                   </form>
+               </div>
+               <div class="modal-footer mx-auto border-0">
+                   <p>Belum punya akun? <a href="" class="text-primary"> daftar sekarang</a></p>
+               </div>
+           </div>
+       </div>
+   </div>
    <!-- Header part end-->
+
+   @if ($errors->any())
+       <script type="text/javascript">
+           $(window).on('load', function() {
+               $('#loginModal').modal('show');
+           });
+       </script>
+   @endif
